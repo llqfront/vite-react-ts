@@ -1,0 +1,119 @@
+.login_reg_bg {
+  background: url("./i/cta-parallax-bg.jpeg") no-repeat center center;
+  width: 100%;
+  height: 100vh;
+  background-size: 100% 100%;
+}
+
+.login, .register {
+  margin: 80px auto;
+  width: 450px;
+  background: #fff;
+  border-radius: 3%;
+  padding: 20px 20px 40px;
+}
+.login.register, .register.register {
+  margin-top: 40px;
+}
+.login h4, .register h4 {
+  height: 40px;
+  font-size: 16px;
+  line-height: 40px;
+  padding-left: 15px;
+}
+.login .from_con, .register .from_con {
+  padding: 10px 15px 0;
+}
+.login .from_con li label, .register .from_con li label {
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+}
+.login .from_con li label em, .register .from_con li label em {
+  visibility: hidden;
+}
+.login .from_con li .label_ctrl, .register .from_con li .label_ctrl {
+  display: flex;
+}
+.login .from_con li .label_ctrl span, .register .from_con li .label_ctrl span {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  width: 60px;
+  border: 1px solid #22602f;
+  border-right: none;
+  box-sizing: border-box;
+  border-radius: 3px 0 0 3px;
+  text-align: center;
+  cursor: pointer;
+}
+.login .from_con li .label_ctrl .inp, .register .from_con li .label_ctrl .inp {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid #22602f;
+  border-radius: 3px;
+}
+.login .from_con li .label_ctrl .inp_sp, .register .from_con li .label_ctrl .inp_sp {
+  border-radius: 3px 0 0 3px;
+}
+.login .from_con li .label_ctrl .btn2, .register .from_con li .label_ctrl .btn2 {
+  width: 270px;
+  height: 40px;
+  line-height: 40px;
+  background: #22602f;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 0 3px 3px 0;
+  border: none;
+  cursor: pointer;
+}
+.login .from_con li .label_ctrl span + .inp, .register .from_con li .label_ctrl span + .inp {
+  border-radius: 0 3px 3px 0;
+}
+.login .from_con li.sp, .register .from_con li.sp {
+  margin-top: 30px;
+}
+.login .from_con li.sp .label_ctrl .btn, .register .from_con li.sp .label_ctrl .btn {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background: #22602f;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+}
+.login .from_con li.other, .register .from_con li.other {
+  padding: 6px 5px 0;
+  display: flex;
+}
+.login .from_con li.other p, .register .from_con li.other p {
+  width: 50%;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+}
+.login .from_con li.other p:nth-child(2), .register .from_con li.other p:nth-child(2) {
+  text-align: right;
+}
+.login .from_con li.other p:nth-child(1) a, .register .from_con li.other p:nth-child(1) a {
+  color: #22602f;
+}
+.login .from_con li.other2, .register .from_con li.other2 {
+  padding: 6px 5px 0;
+}
+.login .from_con li.other2 p, .register .from_con li.other2 p {
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  text-align: center;
+}
+.login .from_con li.other2 p a, .register .from_con li.other2 p a {
+  color: #22602f;
+}
+
+/*# sourceMappingURL=login.css.map */
