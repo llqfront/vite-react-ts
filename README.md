@@ -4,8 +4,4 @@
 
 
 #### router
-```html
 [router 更换成6](https://reactrouter.com/en/main/start/overview)
-
-
-```
