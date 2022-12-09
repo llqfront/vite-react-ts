@@ -8,7 +8,13 @@ body {
   height: 140px;
   background: #333;
 }
-
+.error_page {
+  text-align: center;
+  padding-top: 100px;
+  .iconfont {
+    font-size: 248px;
+  }
+}
 .header {
   height: 70px;
   width: 100%;

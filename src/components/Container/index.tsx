@@ -25,9 +25,12 @@ const Com: React.FC<Props> = (props) => {
         onMouseOut={hidePopList}
         >
           <NavLink 
-            exact={item.exact}
+            end
+            className={({ isActive }) =>
+              isActive ? 'title active' : 'title'
+            }
             to={item.url}
-            className="title">
+            >
             <i className={`iconfont ${item.icon}`}></i>
             {item.title}
             </NavLink>
