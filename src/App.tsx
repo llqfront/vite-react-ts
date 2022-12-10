@@ -1,13 +1,10 @@
-import React, { Suspense } from 'react';
+import React from 'react';
+import { Provider } from 'react-redux'
 import Router from '@/router';
-import Loading from '@com/Loading'
-import {
-  BrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { store } from '@/store/index'
 const App = () => (
-  <Suspense fallback={<Loading/>}>
-      <RouterProvider router={Router} />
-  </Suspense>
+  <Provider store={store}>
+    <Router/>
+  </Provider>
 )
 export default App;

@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { lazy } from '@loadable/component';
 import {
     createBrowserRouter,
+    RouterProvider
 } from "react-router-dom";
+import Loading from '@com/Loading'
 
 const Home = lazy(() => import('@/views/Home/'))
 const Member = lazy(() => import('@/views/Member'))
@@ -80,5 +82,10 @@ const router = createBrowserRouter([
   },
 ]);
 
-
-export default router
+export default () => (
+    <>
+      <Suspense fallback={<Loading/>}>
+        <RouterProvider router={router} />
+      </Suspense>
+    </>
+)
