@@ -17,11 +17,17 @@ export const counterSlice = createSlice({
       state.value -= 1
     },
     incrementByAmount: (state, action) => {
+    // test: (state, action) => {
       state.value += action.payload
     }
   }
 })
 // 每个 case reducer 函数会生成对应的 Action creators
-export const { increment, decrement, incrementByAmount } = counterSlice.actions
+// export const { increment, decrement, incrementByAmount } = counterSlice.actions
+/**
+ * The incrementByAmount name can be changed to any name, it is not the name that is used to get the final value
+ * export const { increment, decrement, test } = counterSlice.actions
+ * PayloadAction<T> is required, or the final value can be obtained by PayloadAction<T>
+ */
 
-export default counterSlice.reducer
+export default counterSlice

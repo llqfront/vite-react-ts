@@ -1,22 +1,29 @@
-import {createStore, applyMiddleware} from 'redux';
-import thunk from 'redux-thunk';
+import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+// import counterReducer from '@/features/counter/counterSlice';
+// export const store = configureStore({
+//   reducer: {
+//     counter: counterReducer,
+//   },
+// });
 
-import rootReducer from '@/reducers';
-
-const newJson = (str:any) => {
-  let json = (new Function("return " + str))();
-  return json;
-}
-
-let prevStore = newJson(localStorage.getItem("LJMRoot")) || {};
-
-const Store = createStore(
-    rootReducer,
-    prevStore,
-    applyMiddleware(thunk)
-);
-Store.subscribe(() =>{
-  // console.log(Store.getState())
-  localStorage.setItem("LJMRoot", JSON.stringify(Store.getState()));
+// export type AppDispatch = typeof store.dispatch;
+// export type RootState = ReturnType<typeof store.getState>;
+// export type AppThunk<ReturnType = void> = ThunkAction<
+//   ReturnType,
+//   RootState,
+//   unknown,
+//   Action<string>
+// >;
+import rootReducer from '@/features/reducers'
+const store = configureStore({
+  reducer: rootReducer
 })
-export default Store;
+export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>;
+export type AppThunk<ReturnType = void> = ThunkAction<
+  ReturnType,
+  RootState,
+  unknown,
+  Action<string>
+>;
+export default store

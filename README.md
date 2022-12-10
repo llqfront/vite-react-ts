@@ -10,3 +10,10 @@
 
 #### redux
 [新redux](https://cn.redux.js.org/usage/server-rendering)
+[redux-toolkit](https://redux-toolkit.js.org/)
+
+
+##### @reduxjs/toolkit 整理分布图
+>对外使用 actions.ts 和 reducers.ts
+- actions.ts 为所有action 出入口
+- reducers.ts 为所有的reducer 导出入口

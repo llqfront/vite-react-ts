@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useState, useRef } from 'react';
 import Container from '@com/Container';
-import { RootState, AppThunk } from '@/store';
+import type { RootState } from '@/stores';
 import { useSelector, useDispatch } from 'react-redux'
 
 const View: React.FC = (props) => {
