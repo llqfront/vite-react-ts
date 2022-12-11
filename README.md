@@ -1,11 +1,11 @@
 # vite react typescript demo
 
 # node 16
+[JavaScript](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Language_Overview)
 
 
 #### router
 [router 更换成6](https://reactrouter.com/en/main/start/overview)
-
 
 
 #### redux
