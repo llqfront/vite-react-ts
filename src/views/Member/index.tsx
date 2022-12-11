@@ -3,8 +3,9 @@ import { useSelector, useDispatch } from 'react-redux'
 import type { RootState } from '@/stores';
 import { counterSlice } from '@/features/actions';
 import Container from '@com/Container';
-
+import { useGetPokemonByNameQuery } from '@/services/pokemon'
 const View: React.FC = (props) => {
+  const { data, error, isLoading } = useGetPokemonByNameQuery('bulbasaur')
   const count = useSelector((state: RootState) => state.counter.value)
   const dispatch = useDispatch()
   const { decrement, increment } = counterSlice.actions;
@@ -25,6 +26,16 @@ const View: React.FC = (props) => {
         >
           Decrement
         </button>
+        {error ? (
+        <>Oh no, there was an error</>
+      ) : isLoading ? (
+        <>Loading...</>
+      ) : data ? (
+        <>
+          <h3>{data.species.name}</h3>
+          <img src={data.sprites.front_shiny} alt={data.species.name} />
+        </>
+      ) : null}
       </Container>
     </React.Fragment>
   )

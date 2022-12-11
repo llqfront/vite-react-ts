@@ -17,3 +17,7 @@
 >对外使用 actions.ts 和 reducers.ts
 - actions.ts 为所有action 出入口
 - reducers.ts 为所有的reducer 导出入口
+
+
+##### 未完成
+请求部分需要增加其他案例

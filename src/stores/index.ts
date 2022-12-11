@@ -1,4 +1,8 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+import { setupListeners } from '@reduxjs/toolkit/query'
+import type { PreloadedState } from '@reduxjs/toolkit'
+import { pokemonApi } from '@/services/pokemon'
+import rootReducer from '@/features/reducers'
 // import counterReducer from '@/features/counter/counterSlice';
 // export const store = configureStore({
 //   reducer: {
@@ -14,16 +18,31 @@ import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 //   unknown,
 //   Action<string>
 // >;
-import rootReducer from '@/features/reducers'
-const store = configureStore({
-  reducer: rootReducer
-})
-export type AppDispatch = typeof store.dispatch;
-export type RootState = ReturnType<typeof store.getState>;
+// const store = configureStore({
+//   reducer: rootReducer,
+//   middleware: (getDefaultMiddleware) =>
+//     getDefaultMiddleware().concat(pokemonApi.middleware),
+// })
+export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
+  return configureStore({
+    reducer: rootReducer,
+    middleware: (getDefaultMiddleware) =>
+      // adding the api middleware enables caching, invalidation, polling and other features of `rtk-query`
+      getDefaultMiddleware().concat(pokemonApi.middleware),
+    preloadedState,
+  })
+}
+setupListeners(setupStore().dispatch)
+// export type AppDispatch = typeof setupStore().dispatch;
+// export type RootState = ReturnType<typeof setupStore().getState>;
+export type RootState = ReturnType<typeof rootReducer>
+export type AppStore = ReturnType<typeof setupStore>
+export type AppDispatch = AppStore['dispatch']
+
 export type AppThunk<ReturnType = void> = ThunkAction<
   ReturnType,
   RootState,
   unknown,
   Action<string>
 >;
-export default store
+export default setupStore
