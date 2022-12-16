@@ -2,6 +2,7 @@ import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query'
 import type { PreloadedState } from '@reduxjs/toolkit'
 import { pokemonApi } from '@/services/pokemon'
+import { todoApi } from '@/services/todo'
 import rootReducer from '@/features/reducers'
 // import counterReducer from '@/features/counter/counterSlice';
 // export const store = configureStore({
@@ -28,7 +29,7 @@ export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
     reducer: rootReducer,
     middleware: (getDefaultMiddleware) =>
       // adding the api middleware enables caching, invalidation, polling and other features of `rtk-query`
-      getDefaultMiddleware().concat(pokemonApi.middleware),
+      getDefaultMiddleware().concat(pokemonApi.middleware,todoApi.middleware),
     preloadedState,
   })
 }
