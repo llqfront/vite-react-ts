@@ -2,15 +2,25 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import type { Pokemon } from './types'
 // Define a service using a base URL and expected endpoints
-export const pokemonApi = createApi({
-  reducerPath: 'pokemonApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://pokeapi.co/api/v2/' }),
+/****
+ * https://blog.csdn.net/weixin_45625609/article/details/126371290
+ * 走的代理开发
+ * step1
+ * src/features/reducers.ts
+ *  import { todoApi } from '@/services/todo'
+ *  [todoApi.reducerPath]: todoApi.reducer,
+ *  
+ */
+export const todoApi = createApi({
+  reducerPath: 'todoApi',
+  baseQuery: fetchBaseQuery({ baseUrl: '/api/' }),
   endpoints: (builder) => ({
-    getPokemonByName: builder.query<Pokemon, string>({
-      query: (name) => `pokemon/${name}`,
+    getAdvertise: builder.query<Pokemon, string>({
+      query: (name) => `${name}`,
     }),
   }),
 })
+// useGetAdvertiseQuery
 // export const pokemonApi()
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
