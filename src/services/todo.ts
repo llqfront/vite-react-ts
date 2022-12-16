@@ -9,7 +9,8 @@ import type { Pokemon } from './types'
  * src/features/reducers.ts
  *  import { todoApi } from '@/services/todo'
  *  [todoApi.reducerPath]: todoApi.reducer,
- *  
+ * src/stores/index.ts
+ * getDefaultMiddleware().concat(pokemonApi.middleware,todoApi.middleware),
  */
 export const todoApi = createApi({
   reducerPath: 'todoApi',
